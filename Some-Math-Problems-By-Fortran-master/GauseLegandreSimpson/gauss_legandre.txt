@@ -1,0 +1,41 @@
+To calculate the multiple integral ∫∫ ysin(x) dA over the region defined by y = 2x to y = x^3 and x = 2 to x = 3 using Gaussian quadrature with Legendre polynomials, you'll first need to transform this double integral into a standard form with limits of integration from -1 to 1 in both x and y. This involves a change of variables.
+
+Let's start by transforming the region of integration:
+
+1. For y, the new limits of integration are from -1 to 1. We can use the following transformation:
+
+   y = (1 + t)/2, where t goes from -1 to 1.
+
+2. For x, the new limits of integration are from -1 to 1. We can use the following transformation:
+
+   x = 2t + 3, where t goes from -1 to 1.
+
+Now we have:
+
+∫∫ ysin(x) dA = ∫∫ f(t) dA,
+
+where the new limits of integration are -1 to 1 for both t and s, and f(t) = ((1 + t)/2) * sin(2t + 3).
+
+Now, we'll use Gaussian quadrature with Legendre polynomials for a double integral:
+
+∫∫ f(t) dA ≈ ∑[i=1 to n] ∑[j=1 to m] w_i * w_j * f(t_i, s_j),
+
+where n and m are the number of points for each dimension (in this case, 2 for both t and x) and w_i and w_j are the corresponding weights.
+
+For the Legendre polynomial with 2 points, we have the following weights and points:
+
+w_1 = w_2 = 1,
+t_1 = -1/√3, t_2 = 1/√3,
+s_1 = -1/√3, s_2 = 1/√3.
+
+Now, we can calculate the approximation to the integral:
+
+∫∫ f(t) dA ≈ ∑[i=1 to 2] ∑[j=1 to 2] (1) * (1) * f(t_i, s_j),
+
+where t_i and s_j are the Legendre points.
+
+Calculate the values of f(t_i, s_j) for each combination of i and j, and sum them up to get the approximate integral:
+
+∫∫ f(t) dA ≈ [f(t_1, s_1) + f(t_1, s_2) + f(t_2, s_1) + f(t_2, s_2)].
+
+Now, plug in the values for t_i and s_j and evaluate f(t_i, s_j) to get the approximate integral.
